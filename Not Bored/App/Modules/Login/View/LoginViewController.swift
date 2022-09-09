@@ -39,20 +39,30 @@ final class LoginViewController: UIViewController {
     private lazy var startButton: UIButton = {
         let aButton = UIButton()
         aButton.translatesAutoresizingMaskIntoConstraints = false
-        aButton.backgroundColor = UIColor(red: 0.03, green: 0.58, blue: 0.94, alpha: 1.00)
         aButton.layer.cornerRadius = 12
-        aButton.setTitle("Start", for: .normal)
+        
+        if participantsTextField.text!.isEmpty || participantsTextField.text == "0" {
+            aButton.setTitle("Tell me the number of participants", for: .normal)
+            aButton.backgroundColor = UIColor.gray
+            aButton.isEnabled = false
+        } else {
+            aButton.setTitle("Start!", for: .normal)
+            aButton.backgroundColor = UIColor(red: 0.03, green: 0.58, blue: 0.94, alpha: 1.00)
+            aButton.isEnabled = true
+        }
+        
         return aButton
     }()
     
     private lazy var termsButton: UIButton = {
         let aButton = UIButton()
+        aButton.setNeedsDisplay()
         aButton.translatesAutoresizingMaskIntoConstraints = false
         aButton.setTitleColor(.black, for: .normal)
         aButton.setTitle("Terms and conditions", for: .normal)
         return aButton
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -107,8 +117,8 @@ final class LoginViewController: UIViewController {
         
     }
     
-//     MARK: - Interactions
-//
+    //MARK: - Interactions
+
     @objc func startPressed () {
         let vc = HomeTabBarController()
         let nv = BaseNavigationController(rootViewController: vc)
