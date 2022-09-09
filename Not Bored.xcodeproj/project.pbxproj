@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3BB1CE587C7BB9FD34203E3F /* Pods_Not_Bored.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839CAE8E82CCE7CC8DAEB2E2 /* Pods_Not_Bored.framework */; };
+		662E6CAA28CBA7CF0060CFAF /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E6CA928CBA7CF0060CFAF /* PaddingLabel.swift */; };
 		663D34EF28C8AF8400933775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34EE28C8AF8400933775 /* AppDelegate.swift */; };
 		663D34F128C8AF8400933775 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F028C8AF8400933775 /* SceneDelegate.swift */; };
 		663D34F328C8AF8400933775 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F228C8AF8400933775 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		4799085C4A821542991C5437 /* Pods-Not Bored.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Not Bored.debug.xcconfig"; path = "Target Support Files/Pods-Not Bored/Pods-Not Bored.debug.xcconfig"; sourceTree = "<group>"; };
+		662E6CA928CBA7CF0060CFAF /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		663D34EB28C8AF8400933775 /* Not Bored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Not Bored.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		663D34EE28C8AF8400933775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		663D34F028C8AF8400933775 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +136,7 @@
 		663D350428C8B0E800933775 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				79DE55AC28CB88680052C819 /* Home Tabbar */,
+				79DE55AC28CB88680052C819 /* Home TabBar */,
 				663D350628C8B13F00933775 /* Login */,
 				663D350728C8B15000933775 /* Terms */,
 				663D350828C8B16100933775 /* Activities */,
@@ -148,6 +150,7 @@
 			children = (
 				79DE55AF28CB88A90052C819 /* Base */,
 				66686B4828CA101E000C53BA /* NotBoredTextField.swift */,
+				662E6CA928CBA7CF0060CFAF /* PaddingLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -272,12 +275,12 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		79DE55AC28CB88680052C819 /* Home Tabbar */ = {
+		79DE55AC28CB88680052C819 /* Home TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				79DE55AD28CB888F0052C819 /* HomeTabBarController.swift */,
 			);
-			path = "Home Tabbar";
+			path = "Home TabBar";
 			sourceTree = "<group>";
 		};
 		79DE55AF28CB88A90052C819 /* Base */ = {
@@ -430,6 +433,7 @@
 				79DE558E28CB68780052C819 /* UIColor+Extension.swift in Sources */,
 				79DE55B128CB88BC0052C819 /* BaseNavigationController.swift in Sources */,
 				663D34F328C8AF8400933775 /* ViewController.swift in Sources */,
+				662E6CAA28CBA7CF0060CFAF /* PaddingLabel.swift in Sources */,
 				79DE559F28CB6B5A0052C819 /* Request.swift in Sources */,
 				79DE55AB28CB6DA30052C819 /* ActivityCell.swift in Sources */,
 				79DE55A528CB6B830052C819 /* ActivityRepository.swift in Sources */,

@@ -37,13 +37,17 @@ class TermsViewController: UIViewController {
         return aScrollView
     }()
     
-    private lazy var aText: UILabel = {
-        let aText = UILabel()
+    private lazy var aText: PaddingLabel = {
+        let aText = PaddingLabel()
         aText.translatesAutoresizingMaskIntoConstraints = false
         aText.text = "Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos ridiculus iaculis,nullam ligula elementum duis tellus maecenas nec fermentum sed dictumlaoreet, taciti donec habitant quam purus ultricies porta posuere sociis. Cubiliasenectus netus integer tempor dignissim viverra nostra tellus scelerisque aliquet,semper penatibus tempus sociosqu class sociis bibendum justo etiam, rutrumaenean et eget pretium volutpat eu dictum dictumst.Praesent gravida ridiculus cursus luctus maecenas in libero mi interdum, auctorullamcorper eget nam eros condimentum litora tristique erat, fusce rhoncusmauris cras aptent non et ultricies. Iaculis porttitor etiam pulvinar proin fringillaad, sem ornare sociosqu ultrices litora himenaeos egestas, eros laoreet maurisleo porta. Nibh interdum facilisis dapibus magnis phasellus tortor fusce nostraquam, ante non elementum himenaeos id hac et hendrerit eros, dui at sollicitudin turpis viverra molestie cras quis. Dignissim faucibus auctor in vitae porttitor tellus nascetur tempor sociosqu,        elementum dis ultricies eu tempus tincidunt lectus posuere, et ac interdumcommodo montes convallis curae facilisis. Vitae diam phasellus litora ad aeneanhimenaeos, magnis malesuada nec metus faucibus, turpis mollis hac lacinia lacus. Condimentum dis in sed vel molestie integer, gravida eget volutpat interdum bibendum scelerisque magnis, penatibus non sollicitudin convallis egestas. Aptent mi ligula conubia justo habitant cubilia tellus curabitur, a nisi integer non eget vivamus cursus hac, lacus rutrum ridiculus tempor litora nostra dis.Nisl pulvinar taciti tellus diam quam dictum cursus potenti euismod natoque feugiat mattis ornare tortor, aliquam orci dapibus inceptos id egestas ante viverra donec aptent suscipit nulla. Eget nisl fringilla cras felis maecenas nisi ridiculus id conubia hac primis sem ullamcorper porttitor, rutrum ac sodales ultrices vestibulum cum leo semper fusce porta eu fermentum. Proin nisi suspendisse class facilisi curabitur quisque, fusce vulputate semper a nulla velit, duis in orci faucibus turpis. Risus metus magnis aliquam accumsan laoreet congue per,tempus purus et odio senectus sodales vulputate, ligula malesuada dis habitasse nullam pellentesque."
         aText.textColor = UIColor(red: 0.16, green: 0.17, blue: 0.43, alpha: 1.00)
-        aText.font = UIFont.monospacedSystemFont(ofSize: 20, weight: .bold)
-        aText.textAlignment = .center
+        aText.font = UIFont.systemFont(ofSize: 20)
+        aText.textAlignment = .justified
+        aText.topInset = 5.0
+        aText.bottomInset = 5.0
+        aText.leftInset = 20.0
+        aText.rightInset = 20.0
         aText.numberOfLines = 0
         return aText
     }()
