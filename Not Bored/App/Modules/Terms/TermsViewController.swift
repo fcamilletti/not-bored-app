@@ -69,16 +69,18 @@ class TermsViewController: UIViewController {
     
     // MARK: - View Build
     private func setupView(){
-        // Background Color
-        self.view.backgroundColor = UIColor(red: 0.83, green: 0.96, blue: 1.00, alpha: 1.00)
-        self.view.addSubview(scrollView)
-        self.view.addSubview(titleLabel)
-        self.view.addSubview(subTitleLabel)
-        self.scrollView.addSubview(contentView)
-        self.view.addSubview(closeButton)
-        self.contentView.addSubview(aText)
+
+     // Background Color
+    self.view.backgroundColor = .color_background_app
+    self.view.addSubview(scrollView)
+    self.view.addSubview(titleLabel)
+    self.view.addSubview(subTitleLabel)
+    self.scrollView.addSubview(contentView)
+    self.view.addSubview(closeButton)
+    self.contentView.addSubview(aText)
         
-        closeButton.addTarget(self, action: #selector(closePressed), for: .touchDown)
+    closeButton.addTarget(self, action: #selector(closePressed), for: .touchDown)
+    
     }
     
     private func setupConstraints() {

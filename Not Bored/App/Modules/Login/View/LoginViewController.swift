@@ -74,7 +74,7 @@ final class LoginViewController: UIViewController {
     private func setupView() {
         
         // Background Color
-        self.view.backgroundColor = UIColor(red: 0.83, green: 0.96, blue: 1.00, alpha: 1.00)
+        self.view.backgroundColor = .color_background_app
         
         // Subviews
         self.view.addSubview(notBoredTitleLabel)
@@ -84,8 +84,8 @@ final class LoginViewController: UIViewController {
         self.view.addSubview(termsButton)
         
         // Interactions
-        startButton.addTarget(self, action: #selector(startPressed), for: .touchUpInside)
-        termsButton.addTarget(self, action: #selector(termsPressed), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(startPressed), for: .touchDown)
+        termsButton.addTarget(self, action: #selector(termsPressed), for: .touchDown)
     }
     
     private func setupConstraints() {
@@ -117,13 +117,16 @@ final class LoginViewController: UIViewController {
         
     }
     
-    //  MARK: - Interactions
-    
+    //MARK: - Interactions
+
     @objc func startPressed () {
-        let vc = ActivitiesViewController()
-        self.present(vc, animated: true)
+        let vc = HomeTabBarController()
+        let nv = BaseNavigationController(rootViewController: vc)
+        nv.modalPresentationStyle = .fullScreen
+        nv.isNavigationBarHidden = true
+        self.present(nv , animated: true)
     }
-    
+
     @objc func termsPressed () {
         let vc = TermsViewController()
         self.present(vc, animated: true)
