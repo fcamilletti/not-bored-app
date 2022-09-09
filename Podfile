@@ -8,4 +8,5 @@ target 'Not Bored' do
   # Pods for Not Bored
 	
 	pod 'Alamofire'
+	pod 'PaddingLabel', '1.2'
 end

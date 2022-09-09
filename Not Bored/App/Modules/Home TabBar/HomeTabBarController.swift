@@ -9,10 +9,10 @@ import UIKit
 
 
 class HomeTabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupView()
         addTabItems()
     }
@@ -26,7 +26,7 @@ class HomeTabBarController: UITabBarController {
         tabBar.barTintColor = .color_background_app
         
         let appareance = UITabBarAppearance()
-     
+        
         appareance.backgroundColor = .color_background_app
         appareance.shadowColor = nil
         
@@ -43,21 +43,20 @@ class HomeTabBarController: UITabBarController {
         
         let activityTab = ActivitiesViewController()
         activityTab.title = "Activities"
-       
+        
         let activityTab2 = ActivitiesViewController()
         activityTab2.title = "Random"
         
         let viewControllers = [
-            BaseNavigationController(rootViewController: activityTab)  ,
+            BaseNavigationController(rootViewController: activityTab),
             BaseNavigationController(rootViewController: activityTab2)
         ]
         
         setViewControllers( viewControllers , animated: true )
         
-        tabBar.items?.forEach {
-            $0.image = UIImage(named: "icon_home")
-        }
+        tabBar.items![0].image = UIImage(named: "icon_home")
+        tabBar.items![1].image = UIImage(systemName: "arrow.up.forward.circle")
     }
-
+    
 }
 

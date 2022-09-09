@@ -38,28 +38,21 @@ final class LoginViewController: UIViewController {
     
     private lazy var startButton: UIButton = {
         let aButton = UIButton()
+        aButton.automaticallyUpdatesConfiguration = true
         aButton.translatesAutoresizingMaskIntoConstraints = false
         aButton.layer.cornerRadius = 12
-        
-        if participantsTextField.text!.isEmpty || participantsTextField.text == "0" {
-            aButton.setTitle("Tell me the number of participants", for: .normal)
-            aButton.backgroundColor = UIColor.gray
-            aButton.isEnabled = false
-        } else {
-            aButton.setTitle("Start!", for: .normal)
-            aButton.backgroundColor = UIColor(red: 0.03, green: 0.58, blue: 0.94, alpha: 1.00)
-            aButton.isEnabled = true
-        }
-        
+        aButton.setTitle("Start!", for: .normal)
+        aButton.backgroundColor = UIColor(red: 0.03, green: 0.58, blue: 0.94, alpha: 1.00)
         return aButton
     }()
     
     private lazy var termsButton: UIButton = {
         let aButton = UIButton()
-        aButton.setNeedsDisplay()
+        let attributedTerms = NSMutableAttributedString.init(string: "Terms and conditions")
+        attributedTerms.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range: NSRange.init(location: 0, length: attributedTerms.length))
         aButton.translatesAutoresizingMaskIntoConstraints = false
         aButton.setTitleColor(.black, for: .normal)
-        aButton.setTitle("Terms and conditions", for: .normal)
+        aButton.setAttributedTitle(attributedTerms, for: .normal)
         return aButton
     }()
     
@@ -80,7 +73,11 @@ final class LoginViewController: UIViewController {
         self.view.addSubview(notBoredTitleLabel)
         self.view.addSubview(participantsLabel)
         self.view.addSubview(participantsTextField)
+        participantsTextField.addTarget(self, action: #selector(change), for: .editingChanged)
         self.view.addSubview(startButton)
+        startButton.isEnabled = false
+        startButton.setTitle("Tell me the number of participants", for: .normal)
+        startButton.backgroundColor = UIColor.gray
         self.view.addSubview(termsButton)
         
         // Interactions
@@ -131,5 +128,22 @@ final class LoginViewController: UIViewController {
         let vc = TermsViewController()
         self.present(vc, animated: true)
     }
-    
+
+    @objc func change(textField: NotBoredTextField) {
+        if let n = Int(textField.text ?? "") {
+            if n > 0 {
+                startButton.isEnabled = true
+                startButton.setTitle("Start!", for: .normal)
+                startButton.backgroundColor = UIColor(red: 0.03, green: 0.58, blue: 0.94, alpha: 1.00)
+            } else {
+                startButton.isEnabled = false
+                startButton.setTitle("Tell me the number of participants", for: .normal)
+                startButton.backgroundColor = UIColor.gray
+            }
+        } else {
+            startButton.isEnabled = false
+            startButton.setTitle("Tell me the number of participants", for: .normal)
+            startButton.backgroundColor = UIColor.gray
+        }
+    }
 }
