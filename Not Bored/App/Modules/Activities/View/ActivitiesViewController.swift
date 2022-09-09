@@ -74,5 +74,9 @@ extension ActivitiesViewController : UITableViewDelegate , UITableViewDataSource
         HEIGHT_ROW
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let view = SuggestionsViewController(type: viewModel.activities[indexPath.row].description)
+        
+        navigationController?.pushViewController(view, animated: true)
+    }
 }

@@ -43,8 +43,7 @@ class HomeTabBarController: UITabBarController {
         
         let activityTab = ActivitiesViewController()
         activityTab.title = "Activities"
-        
-        let activityTab2 = ActivitiesViewController()
+        let activityTab2 = SuggestionsViewController(type: "Random")
         activityTab2.title = "Random"
         
         let viewControllers = [
