@@ -70,7 +70,7 @@ class TermsViewController: UIViewController {
     // MARK: - View Build
     private func setupView(){
       // Background Color
-    self.view.backgroundColor = UIColor(red: 0.83, green: 0.96, blue: 1.00, alpha: 1.00)
+    self.view.backgroundColor = .color_background_app
     self.view.addSubview(scrollView)
     self.view.addSubview(titleLabel)
     self.view.addSubview(subTitleLabel)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BB1CE587C7BB9FD34203E3F /* Pods_Not_Bored.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839CAE8E82CCE7CC8DAEB2E2 /* Pods_Not_Bored.framework */; };
 		663D34EF28C8AF8400933775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34EE28C8AF8400933775 /* AppDelegate.swift */; };
 		663D34F128C8AF8400933775 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F028C8AF8400933775 /* SceneDelegate.swift */; };
 		663D34F328C8AF8400933775 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F228C8AF8400933775 /* ViewController.swift */; };
@@ -18,9 +19,23 @@
 		66686B4528CA0BDA000C53BA /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66686B4428CA0BDA000C53BA /* ActivitiesViewController.swift */; };
 		66686B4728CA0BF9000C53BA /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66686B4628CA0BF9000C53BA /* SuggestionsViewController.swift */; };
 		66686B4928CA101E000C53BA /* NotBoredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66686B4828CA101E000C53BA /* NotBoredTextField.swift */; };
+		79DE558E28CB68780052C819 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE558D28CB68780052C819 /* UIColor+Extension.swift */; };
+		79DE559328CB6A320052C819 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE559228CB6A320052C819 /* ActivityService.swift */; };
+		79DE559528CB6A3E0052C819 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE559428CB6A3E0052C819 /* ActivityViewModel.swift */; };
+		79DE559828CB6A790052C819 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE559728CB6A790052C819 /* ActivityType.swift */; };
+		79DE559B28CB6B3A0052C819 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE559A28CB6B3A0052C819 /* APIManager.swift */; };
+		79DE559D28CB6B460052C819 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE559C28CB6B460052C819 /* RequestData.swift */; };
+		79DE559F28CB6B5A0052C819 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE559E28CB6B5A0052C819 /* Request.swift */; };
+		79DE55A328CB6B760052C819 /* Request+Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55A228CB6B760052C819 /* Request+Activity.swift */; };
+		79DE55A528CB6B830052C819 /* ActivityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55A428CB6B830052C819 /* ActivityRepository.swift */; };
+		79DE55A728CB6CA90052C819 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55A628CB6CA90052C819 /* Activity.swift */; };
+		79DE55AB28CB6DA30052C819 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55AA28CB6DA30052C819 /* ActivityCell.swift */; };
+		79DE55AE28CB888F0052C819 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55AD28CB888F0052C819 /* HomeTabBarController.swift */; };
+		79DE55B128CB88BC0052C819 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55B028CB88BC0052C819 /* BaseNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4799085C4A821542991C5437 /* Pods-Not Bored.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Not Bored.debug.xcconfig"; path = "Target Support Files/Pods-Not Bored/Pods-Not Bored.debug.xcconfig"; sourceTree = "<group>"; };
 		663D34EB28C8AF8400933775 /* Not Bored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Not Bored.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		663D34EE28C8AF8400933775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		663D34F028C8AF8400933775 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +49,21 @@
 		66686B4428CA0BDA000C53BA /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		66686B4628CA0BF9000C53BA /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		66686B4828CA101E000C53BA /* NotBoredTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotBoredTextField.swift; sourceTree = "<group>"; };
+		79DE558D28CB68780052C819 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		79DE559228CB6A320052C819 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
+		79DE559428CB6A3E0052C819 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		79DE559728CB6A790052C819 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
+		79DE559A28CB6B3A0052C819 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		79DE559C28CB6B460052C819 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		79DE559E28CB6B5A0052C819 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		79DE55A228CB6B760052C819 /* Request+Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Activity.swift"; sourceTree = "<group>"; };
+		79DE55A428CB6B830052C819 /* ActivityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRepository.swift; sourceTree = "<group>"; };
+		79DE55A628CB6CA90052C819 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		79DE55AA28CB6DA30052C819 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		79DE55AD28CB888F0052C819 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		79DE55B028CB88BC0052C819 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		839CAE8E82CCE7CC8DAEB2E2 /* Pods_Not_Bored.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Not_Bored.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA7A49D1F40A6FD0A0CEF99 /* Pods-Not Bored.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Not Bored.release.xcconfig"; path = "Target Support Files/Pods-Not Bored/Pods-Not Bored.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB1CE587C7BB9FD34203E3F /* Pods_Not_Bored.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +83,8 @@
 			children = (
 				663D34ED28C8AF8400933775 /* Not Bored */,
 				663D34EC28C8AF8400933775 /* Products */,
+				DFE8D1E31FB61F4675398ECE /* Pods */,
+				EB38C5EA4E363E154FEE3331 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +123,9 @@
 		663D350328C8B0E200933775 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				79DE559928CB6AE50052C819 /* Networking */,
+				79DE559628CB6A680052C819 /* Model */,
+				79DE558C28CB68660052C819 /* Extension */,
 				663D350528C8B10100933775 /* Components */,
 			);
 			path = Shared;
@@ -98,6 +134,7 @@
 		663D350428C8B0E800933775 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				79DE55AC28CB88680052C819 /* Home Tabbar */,
 				663D350628C8B13F00933775 /* Login */,
 				663D350728C8B15000933775 /* Terms */,
 				663D350828C8B16100933775 /* Activities */,
@@ -109,6 +146,7 @@
 		663D350528C8B10100933775 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				79DE55AF28CB88A90052C819 /* Base */,
 				66686B4828CA101E000C53BA /* NotBoredTextField.swift */,
 			);
 			path = Components;
@@ -133,7 +171,10 @@
 		663D350828C8B16100933775 /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				66686B4428CA0BDA000C53BA /* ActivitiesViewController.swift */,
+				79DE55A928CB6D840052C819 /* Cell */,
+				79DE559128CB6A270052C819 /* Service */,
+				79DE559028CB6A220052C819 /* ViewModel */,
+				79DE558F28CB6A1E0052C819 /* View */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -154,6 +195,116 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		79DE558C28CB68660052C819 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				79DE558D28CB68780052C819 /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		79DE558F28CB6A1E0052C819 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66686B4428CA0BDA000C53BA /* ActivitiesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79DE559028CB6A220052C819 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				79DE559428CB6A3E0052C819 /* ActivityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		79DE559128CB6A270052C819 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				79DE559228CB6A320052C819 /* ActivityService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		79DE559628CB6A680052C819 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79DE559728CB6A790052C819 /* ActivityType.swift */,
+				79DE55A628CB6CA90052C819 /* Activity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		79DE559928CB6AE50052C819 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				79DE55A128CB6B620052C819 /* Request */,
+				79DE55A028CB6B5D0052C819 /* Repository */,
+				79DE559A28CB6B3A0052C819 /* APIManager.swift */,
+				79DE559C28CB6B460052C819 /* RequestData.swift */,
+				79DE559E28CB6B5A0052C819 /* Request.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		79DE55A028CB6B5D0052C819 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				79DE55A428CB6B830052C819 /* ActivityRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		79DE55A128CB6B620052C819 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				79DE55A228CB6B760052C819 /* Request+Activity.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		79DE55A928CB6D840052C819 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79DE55AA28CB6DA30052C819 /* ActivityCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		79DE55AC28CB88680052C819 /* Home Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				79DE55AD28CB888F0052C819 /* HomeTabBarController.swift */,
+			);
+			path = "Home Tabbar";
+			sourceTree = "<group>";
+		};
+		79DE55AF28CB88A90052C819 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				79DE55B028CB88BC0052C819 /* BaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DFE8D1E31FB61F4675398ECE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4799085C4A821542991C5437 /* Pods-Not Bored.debug.xcconfig */,
+				8AA7A49D1F40A6FD0A0CEF99 /* Pods-Not Bored.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB38C5EA4E363E154FEE3331 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				839CAE8E82CCE7CC8DAEB2E2 /* Pods_Not_Bored.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,9 +312,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 663D34FF28C8AF8500933775 /* Build configuration list for PBXNativeTarget "Not Bored" */;
 			buildPhases = (
+				21B9308B7561BBA1AFF737FF /* [CP] Check Pods Manifest.lock */,
 				663D34E728C8AF8400933775 /* Sources */,
 				663D34E828C8AF8400933775 /* Frameworks */,
 				663D34E928C8AF8400933775 /* Resources */,
+				B35DFAE4E568339A5532AE20 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,17 +373,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21B9308B7561BBA1AFF737FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Not Bored-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B35DFAE4E568339A5532AE20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Not Bored/Pods-Not Bored-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Not Bored/Pods-Not Bored-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Not Bored/Pods-Not Bored-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		663D34E728C8AF8400933775 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79DE559328CB6A320052C819 /* ActivityService.swift in Sources */,
 				66686B4928CA101E000C53BA /* NotBoredTextField.swift in Sources */,
+				79DE55A328CB6B760052C819 /* Request+Activity.swift in Sources */,
 				66686B4528CA0BDA000C53BA /* ActivitiesViewController.swift in Sources */,
 				66686B4328CA0AFC000C53BA /* TermsViewController.swift in Sources */,
+				79DE559828CB6A790052C819 /* ActivityType.swift in Sources */,
+				79DE55A728CB6CA90052C819 /* Activity.swift in Sources */,
+				79DE558E28CB68780052C819 /* UIColor+Extension.swift in Sources */,
+				79DE55B128CB88BC0052C819 /* BaseNavigationController.swift in Sources */,
 				663D34F328C8AF8400933775 /* ViewController.swift in Sources */,
+				79DE559F28CB6B5A0052C819 /* Request.swift in Sources */,
+				79DE55AB28CB6DA30052C819 /* ActivityCell.swift in Sources */,
+				79DE55A528CB6B830052C819 /* ActivityRepository.swift in Sources */,
 				663D34EF28C8AF8400933775 /* AppDelegate.swift in Sources */,
+				79DE559528CB6A3E0052C819 /* ActivityViewModel.swift in Sources */,
+				79DE55AE28CB888F0052C819 /* HomeTabBarController.swift in Sources */,
 				663D350B28C8B2F100933775 /* LoginViewController.swift in Sources */,
+				79DE559B28CB6B3A0052C819 /* APIManager.swift in Sources */,
+				79DE559D28CB6B460052C819 /* RequestData.swift in Sources */,
 				663D34F128C8AF8400933775 /* SceneDelegate.swift in Sources */,
 				66686B4728CA0BF9000C53BA /* SuggestionsViewController.swift in Sources */,
 			);
@@ -374,6 +582,7 @@
 		};
 		663D350028C8AF8500933775 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4799085C4A821542991C5437 /* Pods-Not Bored.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -402,6 +611,7 @@
 		};
 		663D350128C8AF8500933775 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AA7A49D1F40A6FD0A0CEF99 /* Pods-Not Bored.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
