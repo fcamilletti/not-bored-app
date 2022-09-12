@@ -27,10 +27,14 @@ class ActivitiesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupView()
         setupConstraint()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.navigationItem.title = "Activities"
     }
     
     private func setupView(){
@@ -40,8 +44,6 @@ class ActivitiesViewController: UIViewController {
         view.backgroundColor = .blue
         
         view.addSubview(activitiesTableView)
-        viewModel.selectActivity(type: "")
-        
         
     }
     

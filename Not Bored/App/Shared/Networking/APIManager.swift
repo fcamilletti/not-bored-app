@@ -12,4 +12,5 @@ enum APIManager {}
 
 extension APIManager {
     enum Activity { }
+    
 }

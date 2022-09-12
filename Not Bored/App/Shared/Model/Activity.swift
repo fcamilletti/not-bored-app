@@ -13,4 +13,18 @@ struct Activity : Decodable {
     let accessibility : Double
     let participants : Int
     let price : Double
+    
+    var priceType : String {
+        
+        if price == 0 {
+            return "Free"
+        } else if price <= 0.3 {
+            return "Low"
+        } else if price <= 0.6 {
+            return "Medium"
+        } else {
+            return "High"
+        }
+        
+    }
 }

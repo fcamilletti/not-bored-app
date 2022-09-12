@@ -120,7 +120,6 @@ final class LoginViewController: UIViewController {
         let vc = HomeTabBarController()
         let nv = BaseNavigationController(rootViewController: vc)
         nv.modalPresentationStyle = .fullScreen
-        nv.isNavigationBarHidden = true
         self.present(nv , animated: true)
     }
 

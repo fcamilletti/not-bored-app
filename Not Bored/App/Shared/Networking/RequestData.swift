@@ -7,21 +7,29 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 struct RequestData {
     
     let path: String
     let method: Alamofire.HTTPMethod
     let headers: [String : String]
-    let parameters: [ String : Any? ]
+    let parameters: [ String : Any ]
     
     init(endpoint : String , method : Alamofire.HTTPMethod = .get , headers: [String : String ] = [:], parameters: [String : Any?] = [:] ){
         
         self.path = Request.baseURL + endpoint
         self.method = method
         self.headers = headers
-        self.parameters = parameters
         
+        var params : [String : Any ] = [:]
+        
+        for param in parameters {
+            if let value = param.value {
+                params[param.key] = value
+            }
+        }
+        self.parameters = params
     }
     
     func getEncoding() -> ParameterEncoding {
@@ -31,7 +39,6 @@ struct RequestData {
             return JSONEncoding.default
         }
     }
-    
     
 }
 
@@ -48,42 +55,20 @@ extension NetworkRequestTpe {
     
     var identifier: String { String(describing: type(of: self ))}
     
-    
-    func getRequest(onResult: @escaping (Swift.Result<Any,Error>) throws -> Void )  -> DataRequest {
+    func getRequest<T : Decodable >( element : T.Type , onResult: @escaping (Swift.Result<T,Error>) -> Void )  -> DataRequest {
         
-        return AF.request(request.path , method: request.method, parameters: request.parameters, encoding: request.getEncoding()  , headers: HTTPHeaders(request.headers))
-            .responseJSON { ( res : AFDataResponse ) in
+        return AF.request(request.path , method: request.method, parameters: request.parameters as Parameters, encoding: request.getEncoding()  , headers: HTTPHeaders(request.headers))
+            .responseDecodable(of: element.self) { response in
                 
-                do {
-                    
-                    if let _ = res.error {
-                        try onResult(.failure(NetworkingError.error))
-                    }
-                                        
-                    if let statusCode = res.response?.statusCode {
-                        
-                        guard let value = res.value else {
-                            try onResult(.failure(NetworkingError.error))
-                            return
-                        }
-                        
-                        switch statusCode {
-                        case (200...299) :
-                            try onResult(.success(value))
-                            break
-                        default :
-                            try onResult(.failure(NetworkingError.error))
-                            break
-                        }
-                    }
-                    
-                } catch {
-                    
+                switch response.result {
+                case .success(let data) :
+                    onResult(.success(data))
+                    break
+                case .failure(let error):
+                    onResult(.failure(error))
+                    break
                 }
-               
-                return
             }
-        
     }
 }
 
