@@ -33,6 +33,9 @@
 		79DE55AB28CB6DA30052C819 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55AA28CB6DA30052C819 /* ActivityCell.swift */; };
 		79DE55AE28CB888F0052C819 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55AD28CB888F0052C819 /* HomeTabBarController.swift */; };
 		79DE55B128CB88BC0052C819 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55B028CB88BC0052C819 /* BaseNavigationController.swift */; };
+		79DE55B328CF47DB0052C819 /* SuggestionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55B228CF47DB0052C819 /* SuggestionInfoView.swift */; };
+		79DE55B528CF48860052C819 /* SuggestionDescriptionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55B428CF48860052C819 /* SuggestionDescriptionRow.swift */; };
+		79DE55B828CF4E790052C819 /* SuggestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE55B728CF4E790052C819 /* SuggestViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		79DE55AA28CB6DA30052C819 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		79DE55AD28CB888F0052C819 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		79DE55B028CB88BC0052C819 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		79DE55B228CF47DB0052C819 /* SuggestionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionInfoView.swift; sourceTree = "<group>"; };
+		79DE55B428CF48860052C819 /* SuggestionDescriptionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionDescriptionRow.swift; sourceTree = "<group>"; };
+		79DE55B728CF4E790052C819 /* SuggestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestViewModel.swift; sourceTree = "<group>"; };
 		839CAE8E82CCE7CC8DAEB2E2 /* Pods_Not_Bored.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Not_Bored.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA7A49D1F40A6FD0A0CEF99 /* Pods-Not Bored.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Not Bored.release.xcconfig"; path = "Target Support Files/Pods-Not Bored/Pods-Not Bored.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,7 +191,10 @@
 		663D350928C8B18F00933775 /* Suggestions */ = {
 			isa = PBXGroup;
 			children = (
+				79DE55B628CF4E680052C819 /* ViewModel */,
 				66686B4628CA0BF9000C53BA /* SuggestionsViewController.swift */,
+				79DE55B228CF47DB0052C819 /* SuggestionInfoView.swift */,
+				79DE55B428CF48860052C819 /* SuggestionDescriptionRow.swift */,
 			);
 			path = Suggestions;
 			sourceTree = "<group>";
@@ -289,6 +298,14 @@
 				79DE55B028CB88BC0052C819 /* BaseNavigationController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		79DE55B628CF4E680052C819 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				79DE55B728CF4E790052C819 /* SuggestViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DFE8D1E31FB61F4675398ECE /* Pods */ = {
@@ -425,8 +442,10 @@
 			files = (
 				79DE559328CB6A320052C819 /* ActivityService.swift in Sources */,
 				66686B4928CA101E000C53BA /* NotBoredTextField.swift in Sources */,
+				79DE55B328CF47DB0052C819 /* SuggestionInfoView.swift in Sources */,
 				79DE55A328CB6B760052C819 /* Request+Activity.swift in Sources */,
 				66686B4528CA0BDA000C53BA /* ActivitiesViewController.swift in Sources */,
+				79DE55B828CF4E790052C819 /* SuggestViewModel.swift in Sources */,
 				66686B4328CA0AFC000C53BA /* TermsViewController.swift in Sources */,
 				79DE559828CB6A790052C819 /* ActivityType.swift in Sources */,
 				79DE55A728CB6CA90052C819 /* Activity.swift in Sources */,
@@ -435,6 +454,7 @@
 				663D34F328C8AF8400933775 /* ViewController.swift in Sources */,
 				662E6CAA28CBA7CF0060CFAF /* PaddingLabel.swift in Sources */,
 				79DE559F28CB6B5A0052C819 /* Request.swift in Sources */,
+				79DE55B528CF48860052C819 /* SuggestionDescriptionRow.swift in Sources */,
 				79DE55AB28CB6DA30052C819 /* ActivityCell.swift in Sources */,
 				79DE55A528CB6B830052C819 /* ActivityRepository.swift in Sources */,
 				663D34EF28C8AF8400933775 /* AppDelegate.swift in Sources */,

@@ -17,10 +17,10 @@ class BaseNavigationController : UINavigationController {
         navigationBar.backgroundColor = .color_background_app
         navigationBar.shadowImage = UIImage()
         navigationBar.barTintColor = .color_background_app
-
         
         let appearence = UINavigationBarAppearance()
-        appearence.backgroundColor = .color_background_app
+        appearence.backgroundColor = .seconday_color
+    
         appearence.titleTextAttributes = [ .font : UIFont.boldSystemFont(ofSize: 28)]
         
         navigationBar.standardAppearance = appearence

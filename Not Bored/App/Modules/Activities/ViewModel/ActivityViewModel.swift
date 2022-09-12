@@ -13,21 +13,12 @@ class ActivityViewModel {
     private var service : ActivityService
     var activities : [ActivityType] = []
     
-    public init(service : ActivityService){
+    public init( service : ActivityService){
         self.service = service
     }
     
     func getActivities() {
         self.activities = service.fetchActivities()
-        selectActivity(type: "")
-    }
-    
-    func selectActivity(type : String) {
-        
-        APIManager.Activity.getActivity(request: Request.Activity.GetActivity(), onResponse: { activity in
-            print(activity,"hola")
-        })
-      
     }
     
 }

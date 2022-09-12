@@ -22,33 +22,42 @@ class HomeTabBarController: UITabBarController {
         tabBar.isTranslucent = false
         
         tabBar.tintColor = .black
-        tabBar.unselectedItemTintColor = .gray
+        tabBar.unselectedItemTintColor = .black
         tabBar.barTintColor = .color_background_app
         
         let appareance = UITabBarAppearance()
         
-        appareance.backgroundColor = .color_background_app
+        appareance.backgroundColor = .seconday_color
         appareance.shadowColor = nil
+        
+        let itemAppareance = UITabBarItemAppearance()
+        itemAppareance.normal.titleTextAttributes = [ .foregroundColor : UIColor.darkGray ]
+        itemAppareance.selected.titleTextAttributes = [ .foregroundColor : UIColor.black ]
+        
+        appareance.stackedLayoutAppearance = itemAppareance
         
         tabBar.scrollEdgeAppearance = appareance
         tabBar.standardAppearance = appareance
-        tabBarItem.setTitleTextAttributes([.font : UIFont.boldSystemFont(ofSize: 24 )], for: .normal)
-        
+    
+        tabBarItem.setTitleTextAttributes(
+            [.font : UIFont.boldSystemFont(ofSize: 24 ) ], for: .normal)
+
         moreNavigationController.setNavigationBarHidden(true, animated: false)
-        //navigationController?.setNavigationBarHidden( true , animated: true)
         
     }
     
     private func addTabItems(){
         
         let activityTab = ActivitiesViewController()
-        activityTab.title = "Activities"
-        let activityTab2 = SuggestionsViewController(type: "Random")
-        activityTab2.title = "Random"
+        activityTab.tabBarItem.title = "Activities"
+        
+        let suggestTab = SuggestionsViewController()
+        suggestTab.tabBarItem.title = "Random"
+
         
         let viewControllers = [
-            BaseNavigationController(rootViewController: activityTab),
-            BaseNavigationController(rootViewController: activityTab2)
+            activityTab,
+            suggestTab
         ]
         
         setViewControllers( viewControllers , animated: true )

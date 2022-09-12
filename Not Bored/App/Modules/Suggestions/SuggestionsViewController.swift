@@ -20,44 +20,36 @@ class SuggestionsViewController: UIViewController {
         return aLabel
     }()
     
-    private lazy var participantContentView : UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private lazy var priceContentView : UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private lazy var typeContentView : UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-        
-    private lazy var stackView : UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
-    
+
     private lazy var tryBtn : UIButton = {
         let button = UIButton()
         button.backgroundColor = .blue
         button.setTitle("Try another", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 15
-        
+        button.layer.cornerRadius = 8
+
+       
         return button
     }()
 
-    init( type : String) {
+    private lazy var infoView : SuggestionInfoView = {
+        let info = SuggestionInfoView()
+        info.translatesAutoresizingMaskIntoConstraints = false
+        return info
+    }()
+    
+    var activityType : ActivityType?
+    var isRandom = false
+    private var viewModel : SuggestViewModel?
+
+    init( type : String? = nil ) {
         super.init(nibName: nil , bundle: nil)
-        self.title = type
+        
+        if let type = type {
+            self.activityType = ActivityType(description: type)
+            isRandom = true
+        }
+
         
     }
     
@@ -70,40 +62,77 @@ class SuggestionsViewController: UIViewController {
 
         view.addSubview(titleLabel)
         view.addSubview(tryBtn)
-        view.addSubview(stackView)
-        
-        stackView.addArrangedSubview(participantContentView)
-        stackView.addArrangedSubview(priceContentView)
-        stackView.addArrangedSubview(typeContentView)
-        
+
+        view.addSubview(infoView)
         setupView()
         setupConstraint()
+        viewModel = SuggestViewModel( on: self ,  service: ActivityService.shared)
+        viewModel?.getActivity(type: activityType?.description )
         
+        setupNavBar()
     }
     
-
+    func setupNavBar(){
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "Atras"
+        label.font = .boldSystemFont(ofSize: 18)
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressBack)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
+    }
+    
+    @objc func pressBack(){
+        navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let activityType = activityType {
+            tabBarController?.navigationItem.title = activityType.description
+        } else {
+            tabBarController?.navigationItem.title = "Random"
+        }
+    }
+    
     private func setupView(){
         view.backgroundColor = .color_background_app
+        tryBtn.addTarget(self, action: #selector(pressAnother), for: .touchDown)
     }
     
     private func setupConstraint(){
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor , constant: 65 ),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 25),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor , constant:  -25 ),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 45),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor , constant:  -45 ),
+
             tryBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor , constant: -25),
             tryBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 25 ),
             tryBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor , constant: -25),
             tryBtn.heightAnchor.constraint(equalToConstant: 45),
-            stackView.bottomAnchor.constraint(equalTo: tryBtn.topAnchor , constant: -15 ),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 25 ),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor , constant: -25),
-            participantContentView.heightAnchor.constraint(equalToConstant: 55),
-            typeContentView.heightAnchor.constraint(equalToConstant: 55),
-            priceContentView.heightAnchor.constraint(equalToConstant: 55)//,
-            //stackView.heightAnchor.constraint(equalToConstant: 250)
+            infoView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor ,constant: 25),
+            infoView.leadingAnchor.constraint(equalTo: view.leadingAnchor ),
+            infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
+    @objc func pressAnother(){
+        viewModel?.getActivity(type: activityType?.description )
+    }
+    
+}
+
+extension SuggestionsViewController : SuggestViewModelDelegate {
+    
+    func getActivity(activity: Activity) {
+        infoView.configData(activity: activity , random : isRandom)
+        titleLabel.text = activity.activity
+        print(activity)
+    }
+    
+    func handleError(error: Error) {
+        print(error)
+    }
+
     
 }
