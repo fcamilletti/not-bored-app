@@ -20,13 +20,15 @@ class SuggestionsViewController: UIViewController {
         return aLabel
     }()
     
+
     private lazy var tryBtn : UIButton = {
         let button = UIButton()
         button.backgroundColor = .blue
         button.setTitle("Try another", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 8
-        
+
+       
         return button
     }()
 
@@ -47,6 +49,7 @@ class SuggestionsViewController: UIViewController {
             self.activityType = ActivityType(description: type)
             isRandom = true
         }
+
         
     }
     
@@ -59,6 +62,7 @@ class SuggestionsViewController: UIViewController {
 
         view.addSubview(titleLabel)
         view.addSubview(tryBtn)
+
         view.addSubview(infoView)
         setupView()
         setupConstraint()
@@ -101,6 +105,7 @@ class SuggestionsViewController: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor , constant: 65 ),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 45),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor , constant:  -45 ),
+
             tryBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor , constant: -25),
             tryBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 25 ),
             tryBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor , constant: -25),
@@ -128,6 +133,6 @@ extension SuggestionsViewController : SuggestViewModelDelegate {
     func handleError(error: Error) {
         print(error)
     }
-    
+
     
 }

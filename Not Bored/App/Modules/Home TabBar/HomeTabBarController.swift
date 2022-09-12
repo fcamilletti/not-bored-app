@@ -53,6 +53,7 @@ class HomeTabBarController: UITabBarController {
         
         let suggestTab = SuggestionsViewController()
         suggestTab.tabBarItem.title = "Random"
+
         
         let viewControllers = [
             activityTab,
